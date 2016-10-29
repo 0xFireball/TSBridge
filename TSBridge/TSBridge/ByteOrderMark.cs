@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TSBridge
+﻿namespace TSBridge
 {
-    enum ByteOrderMark
+    public enum ByteOrderMark
     {
         None = 0,
         Utf8 = 1,

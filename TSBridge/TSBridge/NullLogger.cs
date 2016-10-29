@@ -1,6 +1,6 @@
 ﻿namespace TSBridge
 {
-    class NullLogger : ILogger
+    internal class NullLogger : ILogger
     {
         public bool information()
         {

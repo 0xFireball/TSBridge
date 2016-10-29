@@ -1,6 +1,6 @@
 ﻿namespace TSBridge
 {
-    enum ModuleGenTarget
+    public enum ModuleGenTarget
     {
         Unspecified = 0,
         Synchronous = 1,

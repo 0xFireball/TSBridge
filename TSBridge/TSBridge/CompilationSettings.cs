@@ -1,6 +1,6 @@
 ﻿namespace TSBridge
 {
-    class CompilationSettings
+    public class CompilationSettings
     {
         public bool propagateEnumConstants = false;
         public bool removeComments = false;

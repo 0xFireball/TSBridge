@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace TSBridge
 {
     // Port from TypeScript.TextUtilities
-    static class TextUtilities
+    internal static class TextUtilities
     {
-        enum CharacterCodes
+        private enum CharacterCodes
         {
             lineFeed = 10,              // \n
             carriageReturn = 13,        // \r
@@ -80,7 +79,8 @@ namespace TSBridge
             else if (IsAnyLineBreakCharacter(c))
             {
                 return 1;
-            } else
+            }
+            else
             {
                 return 0;
             }

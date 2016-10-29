@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using TSBridge.ScriptSnapshot;
 
 namespace TSBridge.Services
 {
-    internal class LanguageServiceHost : ILanguageServiceHost
+    public class LanguageServiceHost : ILanguageServiceHost
     {
         private CompilationSettings settings;
         private Dictionary<string, ScriptInfo> scripts = new Dictionary<string, ScriptInfo>();

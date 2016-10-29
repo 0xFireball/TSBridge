@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TSBridge.Services
+﻿namespace TSBridge.Services
 {
-    interface ILanguageServicesDiagnostics
+    public interface ILanguageServicesDiagnostics
     {
         void log(string content);
     }

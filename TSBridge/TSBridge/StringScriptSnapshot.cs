@@ -2,7 +2,7 @@
 
 namespace TSBridge
 {
-    class StringScriptSnapshot : IScriptSnapshot
+    internal class StringScriptSnapshot : IScriptSnapshot
     {
         private string text;
 
