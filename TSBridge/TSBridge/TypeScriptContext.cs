@@ -31,6 +31,13 @@ namespace TSBridge
 
             _jsEngine.SetValue("host", Host);
             _jsEngine.Execute("let ls = new ts.createLanguageService(host);");
+
+            var libSourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("TSBridge.TSDefs.lib.d.ts");
+            var libSource = ReadStream(libSourceStream);
+
+            Host.RegisterStdLib(libSource);
+
+            //Host.OpenFile(Host.getDefaultLibFileName(CompilerOptions), libSource);
         }
 
         public async Task LoadComponentsAsync()

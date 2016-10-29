@@ -7,7 +7,7 @@ namespace TSBridge.Services
 {
     public class LanguageServiceHost : ILanguageServiceHost
     {
-        private CompilerOptions _settings;
+        private CompilerOptions _options = new CompilerOptions();
         private Dictionary<string, ScriptInfo> _scripts = new Dictionary<string, ScriptInfo>();
         private ILogger _logger;
 
@@ -19,7 +19,7 @@ namespace TSBridge.Services
         public LanguageServiceHost(CompilerOptions settings, ILogger logger)
             : this(logger)
         {
-            _settings = settings;
+            _options = settings;
         }
 
         public void RemoveFile(string filename)
@@ -43,7 +43,7 @@ namespace TSBridge.Services
 
         public CompilerOptions getCompilationSettings()
         {
-            return _settings ?? new CompilerOptions();
+            return _options;
         }
 
         public string getCurrentDirectory() => Environment.CurrentDirectory;
@@ -99,6 +99,10 @@ namespace TSBridge.Services
 
         public IScriptSnapshot getScriptSnapshot(string fileName)
         {
+            if (!_options.noLib && fileName == getDefaultLibFileName(_options))
+            {
+                return new StringScriptSnapshot(_lib_d_ts_content);
+            }
             ScriptInfo info;
             if (_scripts.TryGetValue(fileName, out info))
             {
@@ -173,5 +177,16 @@ namespace TSBridge.Services
             public ByteOrderMark ByteOrderMark;
             public bool IsOpen;
         }
+
+        #region .NET Helpers
+
+        private string _lib_d_ts_content = string.Empty;
+
+        public void RegisterStdLib(string content)
+        {
+            _lib_d_ts_content = content;
+        }
+
+        #endregion .NET Helpers
     }
 }
