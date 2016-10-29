@@ -16,7 +16,7 @@ namespace TSBridge
             _jsEngine = new Engine();
         }
 
-        public async Task LoadComponents()
+        public void LoadComponents()
         {
             // Load the compiler services
             var compilerSourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("TSBridge.JS.typescriptServices.js");
@@ -26,6 +26,11 @@ namespace TSBridge
             Host = new LanguageServiceHost(new NullLogger());
             _jsEngine.SetValue("host", Host);
             _jsEngine.Execute("let ls = new TypeScript.Services.LanguageService(host);");
+        }
+
+        public async Task LoadComponentsAsync()
+        {
+            await Task.Run(() => LoadComponents());
         }
 
         private string ReadStream(Stream stream)
