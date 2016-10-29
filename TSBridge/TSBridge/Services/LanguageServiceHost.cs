@@ -55,6 +55,10 @@ namespace TSBridge.Services
 
         public string getScriptVersion(string fileName)
         {
+            if (!_options.noLib && fileName == getDefaultLibFileName(_options))
+            {
+                return "0";
+            }
             ScriptInfo info;
             if (_scripts.TryGetValue(fileName, out info))
             {

@@ -8,7 +8,7 @@
         public bool noResolve = false;
         public bool allowAutomaticSemicolonInsertion = true;
         public bool noImplicitAny = false;
-        public bool noLib = false;
+        public bool noLib = true;
         public LanguageVersion codeGenTarget = LanguageVersion.EcmaScript5;
         public ModuleGenTarget moduleGenTarget = ModuleGenTarget.Unspecified;
         public string outFileOption = "";

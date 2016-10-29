@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using TSBridge;
 
 namespace Source2Ast
@@ -15,7 +16,7 @@ namespace Source2Ast
         {
             var tsCtx = new TypeScriptContext();
             await tsCtx.LoadComponentsAsync();
-            tsCtx.OpenFile("main.ts", @"
+            var astJson = tsCtx.BuildAstJson("main.ts", @"
 
 class Program {
     static main() {
@@ -25,7 +26,7 @@ class Program {
 
 Program.main();
 ");
-            
+            Console.WriteLine(astJson);
         }
     }
 }

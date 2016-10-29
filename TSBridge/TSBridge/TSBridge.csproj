@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\ITypeScriptLanguageService.cs" />
+    <Compile Include="Api\Meta\JSBindingAttribute.cs" />
+    <Compile Include="Api\TypeScriptLanguageService.cs" />
     <Compile Include="ByteOrderMark.cs" />
     <Compile Include="CompilerOptions.cs" />
     <Compile Include="ILogger.cs" />
@@ -59,6 +62,7 @@
     <Compile Include="IScriptSnapshot.cs" />
     <Compile Include="ITextChangeRange.cs" />
     <Compile Include="ITextSpan.cs" />
+    <Compile Include="JSUtils\JintJson.cs" />
     <Compile Include="LanguageVersion.cs" />
     <Compile Include="ModuleGenTarget.cs" />
     <Compile Include="NullLogger.cs" />
@@ -79,6 +83,7 @@
   <ItemGroup>
     <EmbeddedResource Include="TSDefs\lib.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
