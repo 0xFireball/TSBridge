@@ -13,7 +13,7 @@ namespace TSBridge
 
         public TypeScriptContext()
         {
-            _jsEngine = new Engine();
+            _jsEngine = new Engine(x => { x.AllowClr(typeof(TypeScriptContext).Assembly); });
         }
 
         public void LoadComponents()
@@ -23,9 +23,10 @@ namespace TSBridge
             var compilerSource = ReadStream(compilerSourceStream);
             _jsEngine.Execute(compilerSource);
 
+            //var tsCompilerObj = _jsEngine.GetValue("ts").AsObject();
             Host = new LanguageServiceHost(new NullLogger());
             _jsEngine.SetValue("host", Host);
-            _jsEngine.Execute("let ls = new TypeScript.Services.LanguageService(host);");
+            _jsEngine.Execute("let ls = new ts.createLanguageService(host);");
         }
 
         public async Task LoadComponentsAsync()
@@ -50,8 +51,8 @@ namespace TSBridge
         {
             Host.OpenFile(filename, text);
 
-            string astJson = _jsEngine
-                .Execute("JSON.stringify(ls.getSyntaxTree('" + filename.Replace("\\", "\\\\") + "'), null, 4)")
+            string emitOutput = _jsEngine
+                .Execute("JSON.stringify(ls.getEmitOutput('" + filename.Replace("\\", "\\\\") + "'), null, 4)")
                 .GetCompletionValue()
                 .ToObject() as string;
             //JObject treeObj = JObject.Parse(tree);

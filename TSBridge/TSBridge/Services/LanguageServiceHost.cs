@@ -46,6 +46,8 @@ namespace TSBridge.Services
             return _settings ?? new CompilationSettings();
         }
 
+        public string getCurrentDirectory() => Environment.CurrentDirectory;
+
         public string[] getScriptFileNames()
         {
             return _scripts.Keys.ToArray();
