@@ -57,6 +57,8 @@
     <Compile Include="ILogger.cs" />
     <Compile Include="IReferenceResolverHost.cs" />
     <Compile Include="IScriptSnapshot.cs" />
+    <Compile Include="ITextChangeRange.cs" />
+    <Compile Include="ITextSpan.cs" />
     <Compile Include="LanguageVersion.cs" />
     <Compile Include="ModuleGenTarget.cs" />
     <Compile Include="NullLogger.cs" />

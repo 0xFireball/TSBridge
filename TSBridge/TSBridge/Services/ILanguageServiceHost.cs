@@ -1,5 +1,4 @@
-﻿
-namespace TSBridge.Services
+﻿namespace TSBridge.Services
 {
     internal interface ILanguageServiceHost : ILogger, IReferenceResolverHost
     {
@@ -7,7 +6,7 @@ namespace TSBridge.Services
 
         string[] getScriptFileNames();
 
-        int getScriptVersion(string fileName);
+        string getScriptVersion(string fileName);
 
         bool getScriptIsOpen(string fileName);
 

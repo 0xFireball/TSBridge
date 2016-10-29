@@ -53,12 +53,12 @@ namespace TSBridge.Services
             return _scripts.Keys.ToArray();
         }
 
-        public int getScriptVersion(string fileName)
+        public string getScriptVersion(string fileName)
         {
             ScriptInfo info;
             if (_scripts.TryGetValue(fileName, out info))
             {
-                return info.Version;
+                return info.Version.ToString();
             }
             throw new ArgumentException();
         }

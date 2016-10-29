@@ -7,6 +7,8 @@ namespace TSBridge
 
         int getLength();
 
+        ITextChangeRange getChangeRange(IScriptSnapshot oldSnapshot);
+
         int[] getLineStartPositions();
 
         //TextChangeRange

@@ -30,5 +30,10 @@ namespace TSBridge
         {
             throw new NotImplementedException();
         }
+
+        public ITextChangeRange getChangeRange(IScriptSnapshot oldSnapshot)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
