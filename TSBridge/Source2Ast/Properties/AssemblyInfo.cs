@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TSBridge")]
-[assembly: AssemblyDescription("Building a bridge between C# and the TypeScript compiler API")]
+[assembly: AssemblyTitle("Source2Ast")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("IridiumIon Software")]
-[assembly: AssemblyProduct("TSBridge")]
-[assembly: AssemblyCopyright("Copyright ©  2016 0xFireball")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Source2Ast")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("90fcc510-9e0a-4781-a3b6-22cc089029b5")]
+[assembly: Guid("51fd479a-f20f-4105-a2a2-480421c0db49")]
 
 // Version information for an assembly consists of the following four values:
 //
