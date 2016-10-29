@@ -1,4 +1,5 @@
-﻿namespace TSBridge.Services
+﻿
+namespace TSBridge.Services
 {
     public interface ILanguageServicesDiagnostics
     {

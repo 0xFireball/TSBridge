@@ -4,26 +4,26 @@ namespace TSBridge
 {
     internal class StringScriptSnapshot : IScriptSnapshot
     {
-        private string text;
+        private string _text;
 
         public StringScriptSnapshot(string text)
         {
-            this.text = text;
+            _text = text;
         }
 
         public string getText(int start, int end)
         {
-            return text.Substring(start, end - start);
+            return _text.Substring(start, end - start);
         }
 
         public int getLength()
         {
-            return this.text.Length;
+            return _text.Length;
         }
 
         public int[] getLineStartPositions()
         {
-            return TextUtilities.ParseLineStarts(this.text);
+            return TextUtilities.ParseLineStarts(_text);
         }
 
         public string getTextChangeRangeSinceVersion(int scriptVersion)

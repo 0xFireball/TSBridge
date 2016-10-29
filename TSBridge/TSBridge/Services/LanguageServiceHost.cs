@@ -7,29 +7,29 @@ namespace TSBridge.Services
 {
     public class LanguageServiceHost : ILanguageServiceHost
     {
-        private CompilationSettings settings;
-        private Dictionary<string, ScriptInfo> scripts = new Dictionary<string, ScriptInfo>();
-        private ILogger logger;
+        private CompilationSettings _settings;
+        private Dictionary<string, ScriptInfo> _scripts = new Dictionary<string, ScriptInfo>();
+        private ILogger _logger;
 
         public LanguageServiceHost(ILogger logger)
         {
-            this.logger = logger;
+            _logger = logger;
         }
 
         public LanguageServiceHost(CompilationSettings settings, ILogger logger)
             : this(logger)
         {
-            this.settings = settings;
+            _settings = settings;
         }
 
         public void RemoveFile(string filename)
         {
-            this.scripts.Remove(filename);
+            _scripts.Remove(filename);
         }
 
         public void OpenFile(string filename, string content)
         {
-            this.scripts.Add(filename, new ScriptInfo()
+            _scripts.Add(filename, new ScriptInfo()
             {
                 ByteOrderMark = ByteOrderMark.None,
                 Content = content,
@@ -43,18 +43,18 @@ namespace TSBridge.Services
 
         public CompilationSettings getCompilationSettings()
         {
-            return settings ?? new CompilationSettings();
+            return _settings ?? new CompilationSettings();
         }
 
         public string[] getScriptFileNames()
         {
-            return scripts.Keys.ToArray();
+            return _scripts.Keys.ToArray();
         }
 
         public int getScriptVersion(string fileName)
         {
             ScriptInfo info;
-            if (scripts.TryGetValue(fileName, out info))
+            if (_scripts.TryGetValue(fileName, out info))
             {
                 return info.Version;
             }
@@ -64,7 +64,7 @@ namespace TSBridge.Services
         public bool getScriptIsOpen(string fileName)
         {
             ScriptInfo info;
-            if (scripts.TryGetValue(fileName, out info))
+            if (_scripts.TryGetValue(fileName, out info))
             {
                 return info.IsOpen;
             }
@@ -74,7 +74,7 @@ namespace TSBridge.Services
         public ByteOrderMark getScriptByteOrderMark(string fileName)
         {
             ScriptInfo info;
-            if (scripts.TryGetValue(fileName, out info))
+            if (_scripts.TryGetValue(fileName, out info))
             {
                 return info.ByteOrderMark;
             }
@@ -98,7 +98,7 @@ namespace TSBridge.Services
         public IScriptSnapshot getScriptSnapshot(string fileName)
         {
             ScriptInfo info;
-            if (scripts.TryGetValue(fileName, out info))
+            if (_scripts.TryGetValue(fileName, out info))
             {
                 return new StringScriptSnapshot(info.Content);
             }
@@ -131,32 +131,32 @@ namespace TSBridge.Services
 
         public bool information()
         {
-            return logger.information();
+            return _logger.information();
         }
 
         public bool debug()
         {
-            return logger.debug();
+            return _logger.debug();
         }
 
         public bool warning()
         {
-            return logger.warning();
+            return _logger.warning();
         }
 
         public bool error()
         {
-            return logger.error();
+            return _logger.error();
         }
 
         public bool fatal()
         {
-            return logger.fatal();
+            return _logger.fatal();
         }
 
         public void log(string s)
         {
-            logger.log(s);
+            _logger.log(s);
         }
 
         #endregion ILogger

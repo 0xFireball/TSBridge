@@ -1,4 +1,5 @@
-﻿namespace TSBridge
+﻿
+namespace TSBridge
 {
     public class CompilationSettings
     {

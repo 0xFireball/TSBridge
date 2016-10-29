@@ -1,4 +1,5 @@
-﻿namespace TSBridge.Services
+﻿
+namespace TSBridge.Services
 {
     internal interface ILanguageServiceHost : ILogger, IReferenceResolverHost
     {

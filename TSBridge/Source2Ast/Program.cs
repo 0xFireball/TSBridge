@@ -1,4 +1,5 @@
-﻿namespace Source2Ast
+﻿
+namespace Source2Ast
 {
     internal class Program
     {
