@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ByteOrderMark.cs" />
-    <Compile Include="CompilationSettings.cs" />
+    <Compile Include="CompilerOptions.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IReferenceResolverHost.cs" />
     <Compile Include="IScriptSnapshot.cs" />

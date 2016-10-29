@@ -2,13 +2,17 @@
 {
     internal interface ILanguageServiceHost : ILogger, IReferenceResolverHost
     {
-        CompilationSettings getCompilationSettings();
+        CompilerOptions getCompilationSettings();
 
         string[] getScriptFileNames();
 
         string getScriptVersion(string fileName);
 
         bool getScriptIsOpen(string fileName);
+
+        string getCurrentDirectory();
+
+        string getDefaultLibFileName(CompilerOptions options);
 
         ByteOrderMark getScriptByteOrderMark(string fileName);
 

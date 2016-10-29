@@ -1,7 +1,6 @@
-﻿
-namespace TSBridge
+﻿namespace TSBridge
 {
-    public class CompilationSettings
+    public class CompilerOptions
     {
         public bool propagateEnumConstants = false;
         public bool removeComments = false;
@@ -10,7 +9,7 @@ namespace TSBridge
         public bool allowAutomaticSemicolonInsertion = true;
         public bool noImplicitAny = false;
         public bool noLib = false;
-        public LanguageVersion codeGenTarget = LanguageVersion.EcmaScript3;
+        public LanguageVersion codeGenTarget = LanguageVersion.EcmaScript5;
         public ModuleGenTarget moduleGenTarget = ModuleGenTarget.Unspecified;
         public string outFileOption = "";
         public string outDirOption = "";

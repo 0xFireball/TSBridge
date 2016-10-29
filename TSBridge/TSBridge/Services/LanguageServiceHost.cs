@@ -7,7 +7,7 @@ namespace TSBridge.Services
 {
     public class LanguageServiceHost : ILanguageServiceHost
     {
-        private CompilationSettings _settings;
+        private CompilerOptions _settings;
         private Dictionary<string, ScriptInfo> _scripts = new Dictionary<string, ScriptInfo>();
         private ILogger _logger;
 
@@ -16,7 +16,7 @@ namespace TSBridge.Services
             _logger = logger;
         }
 
-        public LanguageServiceHost(CompilationSettings settings, ILogger logger)
+        public LanguageServiceHost(CompilerOptions settings, ILogger logger)
             : this(logger)
         {
             _settings = settings;
@@ -41,9 +41,9 @@ namespace TSBridge.Services
 
         #region ILanguageServiceHost
 
-        public CompilationSettings getCompilationSettings()
+        public CompilerOptions getCompilationSettings()
         {
-            return _settings ?? new CompilationSettings();
+            return _settings ?? new CompilerOptions();
         }
 
         public string getCurrentDirectory() => Environment.CurrentDirectory;
@@ -160,6 +160,8 @@ namespace TSBridge.Services
         {
             _logger.log(s);
         }
+
+        public string getDefaultLibFileName(CompilerOptions options) => "lib.d.ts";
 
         #endregion ILogger
 

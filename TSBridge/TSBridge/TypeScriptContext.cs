@@ -10,10 +10,16 @@ namespace TSBridge
     {
         private Engine _jsEngine;
         public LanguageServiceHost Host { get; set; }
+        public CompilerOptions CompilerOptions { get; }
 
-        public TypeScriptContext()
+        public TypeScriptContext(CompilerOptions options)
         {
             _jsEngine = new Engine(x => { x.AllowClr(typeof(TypeScriptContext).Assembly); });
+            Host = new LanguageServiceHost(options, new NullLogger());
+        }
+
+        public TypeScriptContext() : this(new CompilerOptions())
+        {
         }
 
         public void LoadComponents()
@@ -23,8 +29,6 @@ namespace TSBridge
             var compilerSource = ReadStream(compilerSourceStream);
             _jsEngine.Execute(compilerSource);
 
-            //var tsCompilerObj = _jsEngine.GetValue("ts").AsObject();
-            Host = new LanguageServiceHost(new NullLogger());
             _jsEngine.SetValue("host", Host);
             _jsEngine.Execute("let ls = new ts.createLanguageService(host);");
         }
