@@ -1,5 +1,4 @@
 ﻿using Jint;
-using Jint.Native;
 using Newtonsoft.Json;
 using System.IO;
 using System.Reflection;
@@ -44,12 +43,23 @@ namespace TSBridge
             //Host.OpenFile(Host.getDefaultLibFileName(CompilerOptions), libSource);
         }
 
-        public CompletionInfo GetCompletionsAtPosition(string mainFileName, int length)
+        /// <summary>
+        /// Gets the completions at a certain position
+        /// </summary>
+        /// <param name="fileName">The name of the loaded file</param>
+        /// <param name="position">The position in the string to complete at</param>
+        /// <returns>Returns a CompletionInfo if any completions were available. If no completions were available, returns null.</returns>
+        public CompletionInfo GetCompletionsAtPosition(string fileName, int position)
         {
-            var completionsJson = _jsEngine.Execute($"JSON.stringify(ls.getCompletionsAtPosition('{Regex.Escape(mainFileName)}', {length}))")
-                .GetCompletionValue()
-                .AsString();
-            var completionInfo = JsonConvert.DeserializeObject<CompletionInfo>(completionsJson);
+            var completionsJsonNative = _jsEngine.Execute($"JSON.stringify(ls.getCompletionsAtPosition('{Regex.Escape(fileName)}', {position}))")
+                .GetCompletionValue();
+            if (completionsJsonNative.IsUndefined())
+            {
+                //No completions?
+                return null;
+            }
+            var completionsJsonString = completionsJsonNative.AsString();
+            var completionInfo = JsonConvert.DeserializeObject<CompletionInfo>(completionsJsonString);
             return completionInfo;
         }
 

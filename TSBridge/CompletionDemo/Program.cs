@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using TSBridge;
 
 namespace CompletionDemo
@@ -18,7 +17,7 @@ namespace CompletionDemo
             await tsCtx.LoadComponentsAsync();
             const string mainFileName = "main.ts";
             //Load script
-            tsCtx.OpenFile(mainFileName, @"
+            string script = @"
 
 class Program {
     static main() {
@@ -31,9 +30,13 @@ class Program {
 
 Program.main();
 Progra
-");
-            var completionInfo = tsCtx.GetCompletionsAtPosition(mainFileName, mainFileName.Length);
-            Console.WriteLine(completionInfo);
+Program.
+Program.ot
+";
+            tsCtx.OpenFile(mainFileName, script);
+            var classNameCompletionInfo = tsCtx.GetCompletionsAtPosition(mainFileName, 192 /* The 'Progra' line*/);
+            var methodCompletionInfo = tsCtx.GetCompletionsAtPosition(mainFileName, 202 /* The 'Program.' line*/);
+            var noCompletionsInfo = tsCtx.GetCompletionsAtPosition(mainFileName, script.Length - 2);
         }
     }
 }
