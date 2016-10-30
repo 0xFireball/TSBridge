@@ -1,8 +1,11 @@
 ﻿using Jint;
+using Jint.Native;
+using Newtonsoft.Json;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TSBridge.LanguageService;
 using TSBridge.Services;
 
 namespace TSBridge
@@ -39,6 +42,15 @@ namespace TSBridge
             Host.RegisterStdLib(libSource);
 
             //Host.OpenFile(Host.getDefaultLibFileName(CompilerOptions), libSource);
+        }
+
+        public CompletionInfo GetCompletionsAtPosition(string mainFileName, int length)
+        {
+            var completionsJson = _jsEngine.Execute($"JSON.stringify(ls.getCompletionsAtPosition('{Regex.Escape(mainFileName)}', {length}))")
+                .GetCompletionValue()
+                .AsString();
+            var completionInfo = JsonConvert.DeserializeObject<CompletionInfo>(completionsJson);
+            return completionInfo;
         }
 
         public async Task LoadComponentsAsync()

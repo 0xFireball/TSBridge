@@ -3,6 +3,6 @@
     public interface ITextSpan
     {
         int start { get; }
-        int length { get; }
+        int Length { get; }
     }
 }

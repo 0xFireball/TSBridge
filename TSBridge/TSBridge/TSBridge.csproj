@@ -39,6 +39,10 @@
       <HintPath>..\packages\jint.2.10.2\lib\net45\jint.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -62,7 +66,9 @@
     <Compile Include="IScriptSnapshot.cs" />
     <Compile Include="ITextChangeRange.cs" />
     <Compile Include="ITextSpan.cs" />
-    <Compile Include="JSUtils\JintJson.cs" />
+    <Compile Include="LanguageService\CompletionEntry.cs" />
+    <Compile Include="LanguageService\CompletionInfo.cs" />
+    <Compile Include="LanguageService\TextSpan.cs" />
     <Compile Include="LanguageVersion.cs" />
     <Compile Include="ModuleGenTarget.cs" />
     <Compile Include="NullLogger.cs" />
