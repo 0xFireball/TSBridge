@@ -44,23 +44,26 @@ namespace TSBridge
         }
 
         /// <summary>
-        /// Gets the completions at a certain position
+        /// Gets the completions at a certain position asynchronously
         /// </summary>
         /// <param name="fileName">The name of the loaded file</param>
         /// <param name="position">The position in the string to complete at</param>
         /// <returns>Returns a CompletionInfo if any completions were available. If no completions were available, returns null.</returns>
-        public CompletionInfo GetCompletionsAtPosition(string fileName, int position)
+        public async Task<CompletionInfo> GetCompletionsAtPositionAsync(string fileName, int position)
         {
-            var completionsJsonNative = _jsEngine.Execute($"JSON.stringify(ls.getCompletionsAtPosition('{Regex.Escape(fileName)}', {position}))")
-                .GetCompletionValue();
-            if (completionsJsonNative.IsUndefined())
+            return await Task.Run(() =>
             {
-                //No completions?
-                return null;
-            }
-            var completionsJsonString = completionsJsonNative.AsString();
-            var completionInfo = JsonConvert.DeserializeObject<CompletionInfo>(completionsJsonString);
-            return completionInfo;
+                var completionsJsonNative = _jsEngine.Execute($"JSON.stringify(ls.getCompletionsAtPosition('{Regex.Escape(fileName)}', {position}))")
+                    .GetCompletionValue();
+                if (completionsJsonNative.IsUndefined())
+                {
+                    //No completions?
+                    return null;
+                }
+                var completionsJsonString = completionsJsonNative.AsString();
+                var completionInfo = JsonConvert.DeserializeObject<CompletionInfo>(completionsJsonString);
+                return completionInfo;
+            });
         }
 
         public async Task LoadComponentsAsync()

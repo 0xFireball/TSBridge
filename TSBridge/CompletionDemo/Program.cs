@@ -34,9 +34,9 @@ Program.
 Program.ot
 ";
             tsCtx.OpenFile(mainFileName, script);
-            var classNameCompletionInfo = tsCtx.GetCompletionsAtPosition(mainFileName, 192 /* The 'Progra' line*/);
-            var methodCompletionInfo = tsCtx.GetCompletionsAtPosition(mainFileName, 202 /* The 'Program.' line*/);
-            var noCompletionsInfo = tsCtx.GetCompletionsAtPosition(mainFileName, script.Length - 2);
+            var classNameCompletionInfo = await tsCtx.GetCompletionsAtPositionAsync(mainFileName, 192 /* The 'Progra' line*/);
+            var methodCompletionInfo = await tsCtx.GetCompletionsAtPositionAsync(mainFileName, 202 /* The 'Program.' line*/);
+            var noCompletionsInfo = await tsCtx.GetCompletionsAtPositionAsync(mainFileName, script.Length - 2);
         }
     }
 }
