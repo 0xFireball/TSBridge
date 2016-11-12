@@ -1,6 +1,6 @@
 ﻿namespace TSBridge.Ast
 {
-    public enum SyntaxKind
+    public enum SyntaxKind : long
     {
         Unknown = 0,
         EndOfFileToken = 1,
