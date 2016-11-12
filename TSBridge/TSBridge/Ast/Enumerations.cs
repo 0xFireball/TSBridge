@@ -387,4 +387,58 @@
         IntrinsicIndexedElement = 2,
         IntrinsicElement = 3,
     }
+
+    public enum ModuleKind
+    {
+        None = 0,
+        CommonJS = 1,
+        AMD = 2,
+        UMD = 3,
+        System = 4,
+        ES2015 = 5,
+    }
+
+    public enum JsxEmit
+    {
+        None = 0,
+        Preserve = 1,
+        React = 2,
+    }
+
+    public enum NewLineKind
+    {
+        CarriageReturnLineFeed = 0,
+        LineFeed = 1,
+    }
+
+    internal interface LineAndCharacter
+    {
+        line: number;
+        character: number;
+    }
+
+    public enum ScriptKind
+    {
+        Unknown = 0,
+        JS = 1,
+        JSX = 2,
+        TS = 3,
+        TSX = 4,
+    }
+
+    public enum ScriptTarget
+    {
+        ES3 = 0,
+        ES5 = 1,
+        ES2015 = 2,
+        ES2016 = 3,
+        ES2017 = 4,
+        Latest = 4,
+    }
+
+    public enum LanguageVariant
+    {
+        Standard = 0,
+        JSX = 1,
+    }
 }
