@@ -2,7 +2,7 @@
 
 namespace TSBridge.Ast
 {
-    public abstract class Node : INode
+    public class Node : INode
     {
         [JsonProperty("kind")]
         public virtual SyntaxKind Kind { get; set; }
