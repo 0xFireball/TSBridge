@@ -41,7 +41,7 @@ namespace TSBridge.Ast
         [JsonProperty("nodeCount")]
         public int NodeCount { get; set; }
 
-        [JsonProperty("statements")]
+        [JsonProperty("identifierCount")]
         public int IdentifierCount { get; set; }
 
         [JsonProperty("identifiers")]
