@@ -33,7 +33,7 @@ namespace TSBridge.Ast
         public string[] AmdDependencies { get; set; }
 
         [JsonProperty("statements")]
-        public NodeArray<IStatement> Statements { get; set; }
+        public NodeArray<Statement> Statements { get; set; }
 
         [JsonProperty("endOfFileToken")]
         public Token EndOfFileToken { get; set; }

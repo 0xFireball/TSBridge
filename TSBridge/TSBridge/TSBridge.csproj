@@ -112,6 +112,7 @@
     <Compile Include="Ast\IStatement.cs" />
     <Compile Include="Ast\Statement.cs" />
     <Compile Include="Ast\Statements\ClassDeclaration.cs" />
+    <Compile Include="Ast\Statements\DeclarationStatement.cs" />
     <Compile Include="Ast\Statements\IDeclarationStatement.cs" />
     <Compile Include="Ast\ITextRange.cs" />
     <Compile Include="Ast\Token.cs" />
