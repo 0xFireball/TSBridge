@@ -1,6 +1,6 @@
 ﻿namespace TSBridge.Ast
 {
-    public abstract class Statement : Node
+    public abstract class Statement : Node, IStatement
     {
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TSBridge.Ast
 {
-    public class NodeArray<T> : List<T>, ITextRange where T : Node
+    public class NodeArray<T> : List<T>, ITextRange where T : INode
     {
         [JsonProperty("hasTrailingComma")]
         public bool HasTrailingComma { get; set; }

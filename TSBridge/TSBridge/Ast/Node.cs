@@ -2,21 +2,21 @@
 
 namespace TSBridge.Ast
 {
-    public abstract class Node : ITextRange
+    public abstract class Node : INode
     {
         [JsonProperty("kind")]
-        public SyntaxKind Kind { get; set; }
+        public virtual SyntaxKind Kind { get; set; }
 
         [JsonProperty("flags")]
-        public NodeFlags Flags { get; set; }
+        public virtual NodeFlags Flags { get; set; }
 
         [JsonProperty("parent")]
-        public Node Parent { get; set; }
+        public virtual INode Parent { get; set; }
 
         [JsonProperty("pos")]
-        public int Position { get; set; }
+        public virtual int Position { get; set; }
 
         [JsonProperty("end")]
-        public int End { get; set; }
+        public virtual int End { get; set; }
     }
 }

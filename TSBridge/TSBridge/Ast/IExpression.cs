@@ -1,6 +1,6 @@
 ﻿namespace TSBridge.Ast
 {
-    public abstract class Token : Node
+    public interface IExpression : INode
     {
     }
 }
