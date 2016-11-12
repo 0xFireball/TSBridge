@@ -2,7 +2,7 @@
 
 namespace TSBridge.Ast
 {
-    public class Node
+    public abstract class Node : ITextRange
     {
         [JsonProperty("kind")]
         public SyntaxKind Kind { get; set; }
@@ -12,5 +12,11 @@ namespace TSBridge.Ast
 
         [JsonProperty("parent")]
         public Node Parent { get; set; }
+
+        [JsonProperty("pos")]
+        public int Position { get; set; }
+
+        [JsonProperty("end")]
+        public int End { get; set; }
     }
 }

@@ -411,12 +411,6 @@
         LineFeed = 1,
     }
 
-    internal interface LineAndCharacter
-    {
-        line: number;
-        character: number;
-    }
-
     public enum ScriptKind
     {
         Unknown = 0,

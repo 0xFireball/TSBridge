@@ -1,10 +1,6 @@
-﻿using Newtonsoft.Json;
-
-namespace TSBridge.Ast
+﻿namespace TSBridge.Ast
 {
-    public class Statement
+    public abstract class Statement : Node
     {
-        [JsonProperty("pos")]
-        public int Position { get; set; }
     }
 }

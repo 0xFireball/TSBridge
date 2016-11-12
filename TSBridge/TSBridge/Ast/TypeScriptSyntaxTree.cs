@@ -3,20 +3,8 @@ using System.Collections.Generic;
 
 namespace TSBridge.Ast
 {
-    public class TypeScriptSyntaxTree
+    public class TypeScriptSyntaxTree : Declaration
     {
-        [JsonProperty("pos")]
-        public int Position { get; set; }
-
-        [JsonProperty("end")]
-        public int End { get; set; }
-
-        [JsonProperty("flags")]
-        public NodeFlags Flags { get; set; }
-
-        [JsonProperty("kind")]
-        public SyntaxKind Kind { get; set; }
-
         [JsonProperty("text")]
         public string Text { get; set; }
 
@@ -45,7 +33,7 @@ namespace TSBridge.Ast
         public string[] AmdDependencies { get; set; }
 
         [JsonProperty("statements")]
-        public Statement[] Statements { get; set; }
+        public NodeArray<Statement> Statements { get; set; }
 
         [JsonProperty("endOfFileToken")]
         public Token EndOfFileToken { get; set; }
