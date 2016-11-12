@@ -95,6 +95,7 @@
     <Compile Include="Api\ITypeScriptLanguageService.cs" />
     <Compile Include="Api\Meta\JSBindingAttribute.cs" />
     <Compile Include="Api\TypeScriptLanguageService.cs" />
+    <Compile Include="Ast\Enumerations.cs" />
     <Compile Include="ByteOrderMark.cs" />
     <Compile Include="CompilerOptions.cs" />
     <Compile Include="ILogger.cs" />
