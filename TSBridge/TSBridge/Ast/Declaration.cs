@@ -2,7 +2,7 @@
 
 namespace TSBridge.Ast
 {
-    public class Declaration : Statement, IDeclaration
+    public class Declaration : Node, IDeclaration
     {
         [JsonProperty("name")]
         public virtual IIdentifier Name { get; set; }
