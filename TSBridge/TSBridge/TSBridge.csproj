@@ -99,6 +99,7 @@
     <Compile Include="Ast\Declaration.cs" />
     <Compile Include="Ast\Deserialization\AstConverter.cs" />
     <Compile Include="Ast\Deserialization\AstStatementConverter.cs" />
+    <Compile Include="Ast\Deserialization\IdentifierConverter.cs" />
     <Compile Include="Ast\Deserialization\JsonCreationConverter.cs" />
     <Compile Include="Ast\IClassLikeDeclaration.cs" />
     <Compile Include="Ast\IDeclaration.cs" />

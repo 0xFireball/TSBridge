@@ -4,6 +4,8 @@ using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TSBridge.Ast;
+using TSBridge.Ast.Deserialization;
 using TSBridge.LanguageService;
 using TSBridge.Services;
 
@@ -111,6 +113,20 @@ namespace TSBridge
                 .GetCompletionValue()
                 .ToObject() as string;
             return outputJson;
+        }
+
+        public TypeScriptSyntaxTree BuildAst(string filename, string text)
+        {
+            //get json
+            var astJson = BuildAstJson(filename, text);
+            //deserialize
+            var syntaxTree = JsonConvert.DeserializeObject<TypeScriptSyntaxTree>(astJson,
+                new AstConverter(),
+                new AstStatementConverter(),
+                new IdentifierConverter()
+            );
+
+            return syntaxTree;
         }
 
         public void RemoveFile(string filename)
