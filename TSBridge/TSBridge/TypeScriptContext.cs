@@ -129,6 +129,11 @@ namespace TSBridge
             return syntaxTree;
         }
 
+        public async Task<TypeScriptSyntaxTree> BuildAstAsync(string filename, string text)
+        {
+            return await Task.Run(() => BuildAst(filename, text));
+        }
+
         public void RemoveFile(string filename)
         {
             Host.RemoveFile(filename);
