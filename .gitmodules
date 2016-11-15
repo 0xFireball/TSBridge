@@ -1,0 +1,3 @@
+[submodule "IridiumJS"]
+	path = IridiumJS
+	url = https://github.com/0xFireball/IridiumJS.git
