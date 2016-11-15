@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompletionDemo", "Completio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{0F5AB636-517D-47E3-9406-D1E064848F0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IridiumJS", "..\IridiumJS\Jint\IridiumJS.csproj", "{678738DA-F723-4920-B9E5-CAD667104BDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{72F04279-664B-427C-B3EF-FA3A83F0280F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72F04279-664B-427C-B3EF-FA3A83F0280F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72F04279-664B-427C-B3EF-FA3A83F0280F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678738DA-F723-4920-B9E5-CAD667104BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678738DA-F723-4920-B9E5-CAD667104BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678738DA-F723-4920-B9E5-CAD667104BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678738DA-F723-4920-B9E5-CAD667104BDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{51FD479A-F20F-4105-A2A2-480421C0DB49} = {8E51C422-846C-49EB-A787-8F0BADA04DD9}
 		{72F04279-664B-427C-B3EF-FA3A83F0280F} = {8E51C422-846C-49EB-A787-8F0BADA04DD9}
+		{678738DA-F723-4920-B9E5-CAD667104BDA} = {0F5AB636-517D-47E3-9406-D1E064848F0B}
 	EndGlobalSection
 EndGlobal
