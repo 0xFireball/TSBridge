@@ -1,4 +1,4 @@
-﻿using Jint;
+﻿using IridiumJS;
 using Newtonsoft.Json;
 using System.IO;
 using System.Reflection;
@@ -13,13 +13,13 @@ namespace TSBridge
 {
     public class TypeScriptContext
     {
-        private Engine _jsEngine;
+        private JSEngine _jsEngine;
         public LanguageServiceHost Host { get; set; }
         public CompilerOptions CompilerOptions { get; }
 
         public TypeScriptContext(CompilerOptions options)
         {
-            _jsEngine = new Engine(x => { x.AllowClr(typeof(TypeScriptContext).Assembly); });
+            _jsEngine = new JSEngine(x => { x.AllowClr(typeof(TypeScriptContext).Assembly); });
             Host = new LanguageServiceHost(options, new NullLogger());
         }
 
