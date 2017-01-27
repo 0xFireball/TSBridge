@@ -93,6 +93,7 @@
     <Compile Include="Ast\Deserialization\AstStatementConverter.cs" />
     <Compile Include="Ast\Deserialization\IdentifierConverter.cs" />
     <Compile Include="Ast\Deserialization\JsonCreationConverter.cs" />
+    <Compile Include="Ast\Diagnostics\Diagnostic.cs" />
     <Compile Include="Ast\FunctionLikeDeclaration.cs" />
     <Compile Include="Ast\IFunctionLikeDeclaration.cs" />
     <Compile Include="Ast\IClassLikeDeclaration.cs" />
