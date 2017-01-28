@@ -16,7 +16,7 @@ namespace Source2Ast
         {
             var tsCtx = new TypeScriptContext();
             await tsCtx.LoadComponentsAsync();
-            var astJson = tsCtx.BuildAstJson("main.ts", @"
+            var scriptSrc = @"
 
 class Program {
     static main() {
@@ -48,8 +48,12 @@ Program.main();
 
 let num = (new IceCreamSandwich(11)).add(1, 2);
 // num = ""error"";
-");
+";
+            var astJson = tsCtx.BuildAstJson("main.ts", scriptSrc);
             Console.WriteLine(astJson);
+
+            Console.WriteLine("Analyzing and deserializing AST JSON:");
+            var tsAst = tsCtx.BuildAst("main.ts", scriptSrc);
         }
     }
 }

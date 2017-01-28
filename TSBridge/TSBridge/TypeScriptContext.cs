@@ -123,7 +123,8 @@ namespace TSBridge
             var syntaxTree = JsonConvert.DeserializeObject<TypeScriptSyntaxTree>(astJson,
                 new AstConverter(),
                 new AstStatementConverter(),
-                new IdentifierConverter()
+                new IdentifierConverter(),
+                new ClassElementConverter()
             );
 
             return syntaxTree;

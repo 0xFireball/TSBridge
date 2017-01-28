@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using TSBridge.Ast.Diagnostics;
+using TSBridge.Ast.SubNodes.Declarations;
 
 namespace TSBridge.Ast
 {

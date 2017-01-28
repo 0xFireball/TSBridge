@@ -1,4 +1,4 @@
-﻿namespace TSBridge.Ast
+﻿namespace TSBridge.Ast.SubNodes.Declarations
 {
     public interface IClassLikeDeclaration : IDeclaration
     {

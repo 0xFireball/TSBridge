@@ -1,4 +1,4 @@
-﻿namespace TSBridge.Ast
+﻿namespace TSBridge.Ast.SubNodes.Declarations
 {
     public class FunctionLikeDeclaration : Declaration, IFunctionLikeDeclaration
     {

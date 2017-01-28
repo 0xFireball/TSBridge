@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TSBridge.Ast
+namespace TSBridge.Ast.SubNodes.Declarations
 {
     public interface IDeclaration : INode
     {
