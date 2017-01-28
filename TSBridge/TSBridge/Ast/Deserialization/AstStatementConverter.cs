@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using TSBridge.Ast.Statements;
+using TSBridge.Ast.SubNodes.Organization;
 
 namespace TSBridge.Ast.Deserialization
 {
@@ -19,6 +20,8 @@ namespace TSBridge.Ast.Deserialization
             {
                 case SyntaxKind.ClassDeclaration:
                     return new ClassDeclaration();
+                case SyntaxKind.Block:
+                    return new BlockOrExpression();
                 default:
                     return new Statement();
             }
