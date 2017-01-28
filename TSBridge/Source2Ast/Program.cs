@@ -24,7 +24,30 @@ class Program {
     }
 }
 
+class Person {
+    constructor(public name: string) {
+    }
+
+    public sayHello() {
+        console.log(this.name + "" says hello!"");
+    }
+}
+
+class IceCreamSandwich {
+    constructor(public size: number) {
+    }
+    public add(a: number, b: number) {
+        return a + b;
+    }
+}
+
+let bob = new Person(""Bob"");
+bob.sayHello();
+
 Program.main();
+
+let num = (new IceCreamSandwich(11)).add(1, 2);
+// num = ""error"";
 ");
             Console.WriteLine(astJson);
         }

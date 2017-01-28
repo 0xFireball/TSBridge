@@ -72,21 +72,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.Contracts" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\ITypeScriptLanguageService.cs" />
     <Compile Include="Api\Meta\JSBindingAttribute.cs" />
     <Compile Include="Api\TypeScriptLanguageService.cs" />
+    <Compile Include="Ast\ClassElement.cs" />
+    <Compile Include="Ast\IClassElement.cs" />
     <Compile Include="Ast\ClassLikeDeclaration.cs" />
     <Compile Include="Ast\Declaration.cs" />
     <Compile Include="Ast\Deserialization\AstConverter.cs" />
@@ -112,6 +105,8 @@
     <Compile Include="Ast\Node.cs" />
     <Compile Include="Ast\NodeArray.cs" />
     <Compile Include="Ast\IStatement.cs" />
+    <Compile Include="Ast\PropertyDeclaration.cs" />
+    <Compile Include="Ast\PropertyName.cs" />
     <Compile Include="Ast\Statement.cs" />
     <Compile Include="Ast\Statements\FunctionDeclaration.cs" />
     <Compile Include="Ast\Statements\ClassDeclaration.cs" />
