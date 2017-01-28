@@ -82,6 +82,7 @@
     <Compile Include="Ast\Deserialization\ExpressionConverter.cs" />
     <Compile Include="Ast\Statements\ExpressionStatement.cs" />
     <Compile Include="Ast\Statements\ReturnStatement.cs" />
+    <Compile Include="Ast\Statements\VariableStatement.cs" />
     <Compile Include="Ast\SubNodes\ClassElements\ClassElement.cs" />
     <Compile Include="Ast\Deserialization\ClassElementConverter.cs" />
     <Compile Include="Ast\IClassElement.cs" />
@@ -118,11 +119,13 @@
     <Compile Include="Ast\ITextRange.cs" />
     <Compile Include="Ast\SubNodes\ClassElements\ConstructorDeclaration.cs" />
     <Compile Include="Ast\SubNodes\ClassElements\MethodDeclaration.cs" />
+    <Compile Include="Ast\SubNodes\Declarations\VariableDeclaration.cs" />
     <Compile Include="Ast\SubNodes\Organization\BlockOrExpression.cs" />
     <Compile Include="Ast\SubNodes\Organization\IBlock.cs" />
     <Compile Include="Ast\SubNodes\Organization\IBlockOrExpression.cs" />
     <Compile Include="Ast\Token.cs" />
     <Compile Include="Ast\TypeScriptSyntaxTree.cs" />
+    <Compile Include="Ast\VariableDeclarationList.cs" />
     <Compile Include="ByteOrderMark.cs" />
     <Compile Include="CompilerOptions.cs" />
     <Compile Include="ILogger.cs" />
