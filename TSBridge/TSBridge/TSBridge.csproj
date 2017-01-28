@@ -114,6 +114,8 @@
     <Compile Include="Ast\ITextRange.cs" />
     <Compile Include="Ast\SubNodes\ClassElements\ConstructorDeclaration.cs" />
     <Compile Include="Ast\SubNodes\ClassElements\MethodDeclaration.cs" />
+    <Compile Include="Ast\SubNodes\Organization\Block.cs" />
+    <Compile Include="Ast\SubNodes\Organization\BlockOrExpression.cs" />
     <Compile Include="Ast\Token.cs" />
     <Compile Include="Ast\TypeScriptSyntaxTree.cs" />
     <Compile Include="ByteOrderMark.cs" />
