@@ -4,6 +4,6 @@ namespace TSBridge.Ast.SubNodes.Declarations
 {
     public interface IFunctionLikeDeclaration : IDeclaration
     {
-        BlockOrExpression Body { get; set; }
+        IBlockOrExpression Body { get; set; }
     }
 }
