@@ -29,7 +29,8 @@ namespace TSBridge.Ast.Deserialization
                 // Misc. statements
                 case SyntaxKind.ExpressionStatement:
                     return new ExpressionStatement();
-
+                case SyntaxKind.VariableStatement:
+                    return new VariableStatement();
                 default:
                     return new Statement();
             }
