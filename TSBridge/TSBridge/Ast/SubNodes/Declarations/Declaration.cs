@@ -6,5 +6,10 @@ namespace TSBridge.Ast.SubNodes.Declarations
     {
         [JsonProperty("name")]
         public virtual IIdentifier Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name.ToString();
+        }
     }
 }

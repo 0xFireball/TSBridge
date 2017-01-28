@@ -12,5 +12,10 @@ namespace TSBridge.Ast
 
         [JsonProperty("originalKeywordKind")]
         public SyntaxKind OriginalKeywordKind { get; set; }
+
+        public override string ToString()
+        {
+            return Text;
+        }
     }
 }
