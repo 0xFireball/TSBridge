@@ -93,6 +93,9 @@
     <Compile Include="Ast\Deserialization\AstStatementConverter.cs" />
     <Compile Include="Ast\Deserialization\IdentifierConverter.cs" />
     <Compile Include="Ast\Deserialization\JsonCreationConverter.cs" />
+    <Compile Include="Ast\Diagnostics\Diagnostic.cs" />
+    <Compile Include="Ast\FunctionLikeDeclaration.cs" />
+    <Compile Include="Ast\IFunctionLikeDeclaration.cs" />
     <Compile Include="Ast\IClassLikeDeclaration.cs" />
     <Compile Include="Ast\IDeclaration.cs" />
     <Compile Include="Ast\Enumerations.cs" />
@@ -110,6 +113,7 @@
     <Compile Include="Ast\NodeArray.cs" />
     <Compile Include="Ast\IStatement.cs" />
     <Compile Include="Ast\Statement.cs" />
+    <Compile Include="Ast\Statements\FunctionDeclaration.cs" />
     <Compile Include="Ast\Statements\ClassDeclaration.cs" />
     <Compile Include="Ast\Statements\DeclarationStatement.cs" />
     <Compile Include="Ast\Statements\IDeclarationStatement.cs" />

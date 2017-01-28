@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using TSBridge.Ast.Diagnostics;
 
 namespace TSBridge.Ast
 {
@@ -48,6 +49,6 @@ namespace TSBridge.Ast
         public Dictionary<string, string> Identifiers { get; set; }
 
         [JsonProperty("parseDiagnostics")]
-        public object ParseDiagnostics { get; set; }
+        public Diagnostic[] ParseDiagnostics { get; set; }
     }
 }

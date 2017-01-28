@@ -109,7 +109,7 @@ namespace TSBridge
             //var outputJson = JintJson.Stringify(sourceFileAst);
 
             string outputJson = _jsEngine
-                .Execute($"JSON.stringify(ts.createSourceFile('{Regex.Escape(filename)}', '{Regex.Escape(text)}'), null, 4)")
+                .Execute($"JSON.stringify(ts.createSourceFile('{Regex.Escape(filename)}', '{Regex.Escape(text).Replace("'", @"\'")}'), null, 4)")
                 .GetCompletionValue()
                 .ToObject() as string;
             return outputJson;
