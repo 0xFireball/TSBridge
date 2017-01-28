@@ -20,8 +20,16 @@ namespace TSBridge.Ast.Deserialization
             {
                 case SyntaxKind.ClassDeclaration:
                     return new ClassDeclaration();
+
                 case SyntaxKind.Block:
                     return new BlockOrExpression();
+                // Method body statements
+                case SyntaxKind.ReturnStatement:
+                    return new ReturnStatement();
+                // Misc. statements
+                case SyntaxKind.ExpressionStatement:
+                    return new ExpressionStatement();
+
                 default:
                     return new Statement();
             }

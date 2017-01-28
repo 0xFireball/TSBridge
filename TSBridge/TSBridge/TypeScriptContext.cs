@@ -124,7 +124,8 @@ namespace TSBridge
                 new AstConverter(),
                 new AstStatementConverter(),
                 new IdentifierConverter(),
-                new ClassElementConverter()
+                new ClassElementConverter(),
+                new ExpressionConverter()
             );
 
             return syntaxTree;

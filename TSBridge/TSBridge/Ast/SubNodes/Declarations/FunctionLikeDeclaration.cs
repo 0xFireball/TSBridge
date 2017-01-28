@@ -6,6 +6,6 @@ namespace TSBridge.Ast.SubNodes.Declarations
     public class FunctionLikeDeclaration : Declaration, IFunctionLikeDeclaration
     {
         [JsonProperty("body")]
-        public IBlockOrExpression Body { get; set; }
+        public BlockOrExpression Body { get; set; }
     }
 }

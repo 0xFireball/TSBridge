@@ -78,6 +78,10 @@
     <Compile Include="Api\ITypeScriptLanguageService.cs" />
     <Compile Include="Api\Meta\JSBindingAttribute.cs" />
     <Compile Include="Api\TypeScriptLanguageService.cs" />
+    <Compile Include="Ast\BaseExpression.cs" />
+    <Compile Include="Ast\Deserialization\ExpressionConverter.cs" />
+    <Compile Include="Ast\Statements\ExpressionStatement.cs" />
+    <Compile Include="Ast\Statements\ReturnStatement.cs" />
     <Compile Include="Ast\SubNodes\ClassElements\ClassElement.cs" />
     <Compile Include="Ast\Deserialization\ClassElementConverter.cs" />
     <Compile Include="Ast\IClassElement.cs" />
