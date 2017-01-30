@@ -68,7 +68,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="IridiumJS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f, processorArchitecture=MSIL">
-      <HintPath>..\packages\IridiumJS.2.10.3\lib\net45\IridiumJS.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\IridiumJS.2.10.3\lib\net45\IridiumJS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
