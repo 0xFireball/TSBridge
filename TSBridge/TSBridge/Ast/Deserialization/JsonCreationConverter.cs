@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Reflection;
 
 namespace TSBridge.Ast.Deserialization
 {
@@ -10,7 +11,7 @@ namespace TSBridge.Ast.Deserialization
 
         public override bool CanConvert(Type objectType)
         {
-            return typeof(T).IsAssignableFrom(objectType);
+            return typeof(T).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo());
         }
 
         public override object ReadJson(JsonReader reader, Type objectType,
