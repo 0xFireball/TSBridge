@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSBridge", "TSBridge\TSBridge.csproj", "{90FCC510-9E0A-4781-A3B6-22CC089029B5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8E51C422-846C-49EB-A787-8F0BADA04DD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source2Ast", "Source2Ast\Source2Ast.csproj", "{51FD479A-F20F-4105-A2A2-480421C0DB49}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{90FCC510-9E0A-4781-A3B6-22CC089029B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90FCC510-9E0A-4781-A3B6-22CC089029B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90FCC510-9E0A-4781-A3B6-22CC089029B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90FCC510-9E0A-4781-A3B6-22CC089029B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51FD479A-F20F-4105-A2A2-480421C0DB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51FD479A-F20F-4105-A2A2-480421C0DB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51FD479A-F20F-4105-A2A2-480421C0DB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
