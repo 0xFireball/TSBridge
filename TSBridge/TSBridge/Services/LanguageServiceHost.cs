@@ -46,7 +46,7 @@ namespace TSBridge.Services
             return _options;
         }
 
-        public string getCurrentDirectory() => Environment.CurrentDirectory;
+        public string getCurrentDirectory() => Directory.GetCurrentDirectory();
 
         public string[] getScriptFileNames()
         {

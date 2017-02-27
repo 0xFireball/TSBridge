@@ -19,7 +19,7 @@ namespace TSBridge
 
         public TypeScriptContext(CompilerOptions options)
         {
-            _jsEngine = new JSEngine(x => { x.AllowClr(typeof(TypeScriptContext).Assembly); });
+            _jsEngine = new JSEngine(x => { x.AllowClr(typeof(TypeScriptContext).GetTypeInfo().Assembly); });
             Host = new LanguageServiceHost(options, new NullLogger());
         }
 
@@ -30,14 +30,14 @@ namespace TSBridge
         public void LoadComponents()
         {
             // Load the compiler services
-            var compilerSourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("TSBridge.JS.typescriptServices.js");
+            var compilerSourceStream = typeof(TypeScriptContext).GetTypeInfo().Assembly.GetManifestResourceStream("TSBridge.JS.typescriptServices.js");
             var compilerSource = ReadStream(compilerSourceStream);
             _jsEngine.Execute(compilerSource);
 
             _jsEngine.SetValue("host", Host);
             _jsEngine.Execute("let ls = new ts.createLanguageService(host);");
 
-            var libSourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("TSBridge.TSDefs.lib.d.ts");
+            var libSourceStream = typeof(TypeScriptContext).GetTypeInfo().Assembly.GetManifestResourceStream("TSBridge.TSDefs.lib.d.ts");
             var libSource = ReadStream(libSourceStream);
 
             Host.RegisterStdLib(libSource);
