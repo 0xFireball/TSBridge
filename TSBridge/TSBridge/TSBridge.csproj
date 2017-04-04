@@ -1,7 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="JS\typescriptServices.js" />
+    <None Remove="TSDefs\lib.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="JS\typescriptServices.js" />
+    <EmbeddedResource Include="TSDefs\lib.d.ts" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="IridiumJS">
       <Version>2.10.3</Version>
