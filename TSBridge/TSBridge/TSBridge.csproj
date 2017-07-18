@@ -1,5 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Description>Building a bridge between C# and the TypeScript analysis APIs</Description>
+    <Copyright>Nihal Talur (0xFireball)</Copyright>
+    <AssemblyTitle>TSBridge</AssemblyTitle>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <VersionPrefix>1.0.2</VersionPrefix>
+    <Authors>0xFireball</Authors>
+    <TargetFrameworks>netstandard1.4</TargetFrameworks>
+    <AssemblyName>TSBridge</AssemblyName>
+    <PackageId>TSBridge</PackageId>
+  </PropertyGroup>
+  <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
